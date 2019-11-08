@@ -24,8 +24,9 @@ namespace NuKeeper.Update.Process
             var sourceUrl = packageSource.SourceUri.ToString();
             var sources = allSources.CommandLine("-s");
 
-            var restoreCommand = $"restore {projectFileName} {sources}";
-            await _externalProcess.Run(projectPath, "dotnet", restoreCommand, true);
+//            HOTFIX FOR https://github.com/NuKeeperDotNet/NuKeeper/pull/833
+//            var restoreCommand = $"restore {projectFileName} {sources}";
+//            await _externalProcess.Run(projectPath, "dotnet", restoreCommand, true);
 
             if (currentPackage.Path.PackageReferenceType == PackageReferenceType.ProjectFileOldStyle)
             {
