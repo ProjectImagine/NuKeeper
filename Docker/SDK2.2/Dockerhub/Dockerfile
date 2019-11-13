@@ -5,4 +5,3 @@ FROM microsoft/dotnet:2.2-sdk-alpine as runtime
 COPY --from=sdk ./NuKeeper/artifacts .
 RUN dotnet tool install nukeeper --global --add-source .
 ENV PATH="${PATH}:/root/.dotnet/tools"
-ENTRYPOINT ["sh"]
